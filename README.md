@@ -1,6 +1,6 @@
-# The-Foundation-CSS-Project
+# The-Odin-All-Projects
 
-this project has made mainly by flex box in 3 hours
+First Project was made is Foundation-CSS-Project made mainly by flex box in 3 hours
 
 
 
