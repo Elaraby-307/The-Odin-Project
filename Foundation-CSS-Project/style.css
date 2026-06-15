@@ -1,0 +1,181 @@
+@import url('https://googleapis.com');
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #1F2937;
+    
+}
+
+.header{
+    color: #F9FAF8;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 18px;
+    
+
+}
+
+a{
+    text-decoration: none;
+    color: #E5E7EB;
+}
+
+
+.sec-part{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #1F2937;
+}
+
+#img{
+    width: 600px;
+    height: 300px;
+    margin-top: 30px;
+    
+}
+
+#fb{
+    font-size: 48px;
+    font-weight: 900;
+    color: #FAF9F8;
+}
+
+#sb{
+    color: #FAF9F8;
+}
+
+section{
+    width: 450px;
+}
+
+button{
+    background-color: #3882F6;
+    width: 80px;
+    height: 30px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 900;
+}
+
+#random {
+    color: #1F2937;
+    font-size: 36px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.big-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.card{
+    border: 3px solid #1753a8;
+    width: 150px;
+    height: 150px;
+    border-radius: 30px;
+}
+
+.text{
+    width: 150px;
+}
+
+.forth-part{
+    background-color: #E5E7EB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#italian{
+    font-size: 36px;
+    color: #1F2934;
+    font-style: italic;
+    width: 80%;
+}
+
+#quote{
+    width: 80%;
+    font-weight: 900;
+    text-align: right;
+}
+
+.fifth-part{
+    
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.pclass{
+    background-color: #3882F6;
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    height: 35%;
+    gap: 100px;
+    border-radius: 10px;
+    
+}
+
+.paragraph{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+#first{
+    color: white;
+    font-weight: 900;
+    font: 22px;
+    margin: 0;
+}
+
+#second{
+    margin: 0;
+}
+
+.pclass button{
+    margin-top: 40px;
+    border: 2px solid white;
+    background-color: none;
+    border-radius: 5px;
+}
+
+.footer{
+    background-color: #1F2937;
+    text-align: center;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
