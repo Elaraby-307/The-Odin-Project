@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissories</title>
+</head>
+<body>
+    <script>
+        let Computer_Score = 0;
+        let Human_Score = 0;
+
+        
+        
+        function getComputerChoice(){
+            let choices = ["Rock", "Paper", "Scissories"]
+            return (choices[Math.floor(Math.random() * choices.length)]); 
+        }
+
+        function getUserChoice(){
+            let choice = prompt("Enter your choice");
+            if(choice.toLowerCase() === "rock" || choice.toLowerCase() === "paper" || choice.toLowerCase() === "scissories"){
+                return choice.charAt(0).toUpperCase()+choice.substring(1).toLowerCase();
+            }
+            
+        }
+
+        function play_round(humanChoice, computerChoice ){
+            if(humanChoice === "Scissories" && computerChoice === "Paper"){
+                console.log("human is the winner");
+                Human_Score++;
+            }else if(humanChoice === "Paper" && computerChoice === "Scissories"){
+                console.log("Computer is the winner");
+                Computer_Score++;
+            }else if(humanChoice === "Rock" && computerChoice === "Paper"){
+                console.log("Computer is the winner");
+                Computer_Score++;
+            }else if(humanChoice === computerChoice){
+                console.log("Draw");
+            }else if(humanChoice === "Rock" && computerChoice === "Scissories" ){
+                console.log("human is the winner");
+                Human_Score++;
+            }else if(humanChoice === "Scissories" && computerChoice === "Rock"){
+                console.log("Computer is the winner");
+                Computer_Score++;
+            }else if(humanChoice === "Paper" && computerChoice === "Rock"){
+                console.log("human is the winner");
+                Human_Score++;
+            }
+            console.log("Human Choice is: "+ humanChoice +"\nComputer Choice is: "+ computerChoice);
+            console.log("Human Score is: "+Human_Score+"\nComputer Score is: "+Computer_Score);
+        }
+
+        
+
+        function play_game(){
+            play_round(getUserChoice(), getComputerChoice());
+            play_round(getUserChoice(), getComputerChoice());
+            play_round(getUserChoice(), getComputerChoice());
+            play_round(getUserChoice(), getComputerChoice());
+            play_round(getUserChoice(), getComputerChoice());
+            if(Human_Score > Computer_Score){
+                console.log("Human is the winner of the game !!");
+            }else if(Computer_Score > Human_Score){
+                console.log("Computer is the winner of the game !!");
+            }else console.log("the entire game ends as draw");
+        
+    
+        }
+
+        play_game();
+
+    </script>
+</body>
+</html>
