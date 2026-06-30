@@ -6,69 +6,113 @@
     <title>Rock Paper Scissories</title>
 </head>
 <body>
+    <div id="container">
+        <button class="btn">Scissories</button>
+        <button class="btn">Paper</button>
+        <button class="btn">Rock</button>
+    </div>
+    
+
+    <style>
+        #container{
+            display: flex;
+            justify-content: space-around;
+            height: 50%;
+        }
+        .btn{
+            background-color: greenyellow;
+            color: black;
+        }
+    </style>
     <script>
+
         let Computer_Score = 0;
         let Human_Score = 0;
 
         
+        let choices = ["Rock", "Paper", "Scissories"]
         
-        function getComputerChoice(){
-            let choices = ["Rock", "Paper", "Scissories"]
-            return (choices[Math.floor(Math.random() * choices.length)]); 
-        }
 
-        function getUserChoice(){
-            let choice = prompt("Enter your choice");
-            if(choice.toLowerCase() === "rock" || choice.toLowerCase() === "paper" || choice.toLowerCase() === "scissories"){
-                return choice.charAt(0).toUpperCase()+choice.substring(1).toLowerCase();
-            }
+        
             
-        }
+        const buttons = document.querySelectorAll(".btn");
+        buttons.forEach(element => {
+            element.addEventListener("click", (e)=>{
+                const user_selection = e.target.textContent;
+                const computer_choice = choices[Math.floor(Math.random() * choices.length)];
+                play_round(user_selection, computer_choice)
+
+            })
+        });
+            
+        
 
         function play_round(humanChoice, computerChoice ){
             if(humanChoice === "Scissories" && computerChoice === "Paper"){
-                console.log("human is the winner");
+                
                 Human_Score++;
+                const div = document.createElement("div");
+                div.textContent = `human won: \n human Score -> ${Human_Score}\n computer Score -> ${Computer_Score}`
+                document.body.appendChild(div)
             }else if(humanChoice === "Paper" && computerChoice === "Scissories"){
-                console.log("Computer is the winner");
                 Computer_Score++;
+                const div = document.createElement("div");
+                div.textContent = `Computer won: \n human Score -> ${Human_Score}\n computer Score -> ${Computer_Score}`
+                document.body.appendChild(div)
+
             }else if(humanChoice === "Rock" && computerChoice === "Paper"){
-                console.log("Computer is the winner");
                 Computer_Score++;
+                const div = document.createElement("div");
+                div.textContent = `Computer won: \n human Score -> ${Human_Score}\n computer Score -> ${Computer_Score}`
+                document.body.appendChild(div)
+
             }else if(humanChoice === computerChoice){
-                console.log("Draw");
+                const div = document.createElement("div");
+                div.textContent = `draw`
+                document.body.appendChild(div)
+
             }else if(humanChoice === "Rock" && computerChoice === "Scissories" ){
-                console.log("human is the winner");
                 Human_Score++;
+                const div = document.createElement("div");
+                div.textContent = `human won: \n human Score -> ${Human_Score}\n computer Score -> ${Computer_Score}`
+                
+                document.body.appendChild(div)
+
             }else if(humanChoice === "Scissories" && computerChoice === "Rock"){
-                console.log("Computer is the winner");
                 Computer_Score++;
+                const div = document.createElement("div");
+                div.textContent = `computer won: \n human Score -> ${Human_Score}\n computer Score -> ${Computer_Score}`
+                document.body.appendChild(div)
+
             }else if(humanChoice === "Paper" && computerChoice === "Rock"){
-                console.log("human is the winner");
                 Human_Score++;
+                const div = document.createElement("div");
+                div.textContent = `human won: \n human Score -> ${Human_Score}\n computer Score -> ${Computer_Score}`
+                document.body.appendChild(div)
+
             }
-            console.log("Human Choice is: "+ humanChoice +"\nComputer Choice is: "+ computerChoice);
-            console.log("Human Score is: "+Human_Score+"\nComputer Score is: "+Computer_Score);
+            
+            if(Human_Score === 5){
+                const div2 = document.createElement("div");
+                div2.textContent = `human won the entire play with 5 points`
+                document.body.appendChild(div2)
+
+            }else if (Computer_Score === 5 ){
+                const div2 = document.createElement("div");
+                div2.textContent = `Computer won the entire play with 5 points`
+                document.body.appendChild(div2)
+
+            }
         }
 
         
 
-        function play_game(){
-            play_round(getUserChoice(), getComputerChoice());
-            play_round(getUserChoice(), getComputerChoice());
-            play_round(getUserChoice(), getComputerChoice());
-            play_round(getUserChoice(), getComputerChoice());
-            play_round(getUserChoice(), getComputerChoice());
-            if(Human_Score > Computer_Score){
-                console.log("Human is the winner of the game !!");
-            }else if(Computer_Score > Human_Score){
-                console.log("Computer is the winner of the game !!");
-            }else console.log("the entire game ends as draw");
-        
     
-        }
 
-        play_game();
+        
+        
+
+
 
     </script>
 </body>
