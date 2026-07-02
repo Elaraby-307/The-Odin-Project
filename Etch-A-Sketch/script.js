@@ -26,7 +26,9 @@ butt.addEventListener("click", (e) =>{
 
 document.body.addEventListener("mouseover", (e) => {
     if(e.target.classList.contains("sub-div")){
-        e.target.style.backgroundColor = "green";
+        
+        color = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
+        e.target.style.backgroundColor = color;
     }
 })
 
