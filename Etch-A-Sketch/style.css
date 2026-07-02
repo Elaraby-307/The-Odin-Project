@@ -1,0 +1,23 @@
+
+body{
+    text-align: center;
+}
+
+#btn{
+    margin: 20px;
+}
+
+
+
+#container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub-div{
+    height: 15px;
+    width: 15px;
+    box-sizing: border-box;
+    background-color: gray;
+    margin: 5px;
+}
