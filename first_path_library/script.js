@@ -33,7 +33,7 @@ function books(id, title, author, pages, read) {
 }
 
 books.prototype.read = function(){
-    (this.read == true) ? this.read = false : this.read = true
+    (this.read === true) ? this.read = false : this.read = true
 
 }
 
