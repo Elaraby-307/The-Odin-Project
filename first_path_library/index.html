@@ -6,6 +6,7 @@
     <title>library</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="./script.js"></script>
+    <script defer src="secscript.js"></script>
 </head>
 <body>
     <div id="container">
@@ -20,7 +21,8 @@
             <input class="inp" type="text" placeholder="Enter book title" required>
             <input class="inp" type="text" placeholder="Enter book author" required>
             <input class="inp" type="number" placeholder="Nom of pages" required>
-            <input class="inp" type="text" placeholder="Does book read before ?" required>
+            <label for="read">have you read ?  </label>
+            <input id="read" class="inp" type="checkbox" placeholder="Does book read before ?" required>
             
             <input type="submit" class="send">
         </form>
