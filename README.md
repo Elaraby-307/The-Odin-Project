@@ -1,14 +1,5 @@
 # The-Odin-All-Projects
 
-- First Project was made is Foundation-CSS-Project made mainly by flex box in 3 hours
+I started learning with The Odin Project to strengthen my source code review skills and improve my ability to discover security vulnerabilities. It isn't an easy path because it goes into a lot of depth, but I'm trying to become one of the best in my field.
 
-- The second one is First Js projest "Rock Paper Scissories"
-
-second one updated to make it via UI no consol
-
-- The third one is Etch-A-Sketch it was easy one but I took too much to finish 
-
-- Last JS FOUNDATION PROJECT has done but I think it's made with poor performance it took much time 
-and there are many modifications I want to do and I think I'll be able to do it soon.
-
-- first project in your path 'library' has done
+By the way, I probably won't finish the entire curriculum. My goal is to complete the JavaScript Foundations, the JavaScript path, and then learn Node.js and SQL. If I can achieve that one day, I'll be really proud of myself.
