@@ -4,12 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title%></title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <% messages.forEach((message) => {%>
-        <p><%= message.user %></p>
-        <p><%= message.text %></p>
-        <p><%= message.added %></p>
-    <% }) %>
+    
+        <% messages.forEach((message) => {%>
+            <div>
+                <p><%= message.user %></p>
+                <p><%= message.text %></p>
+                <p><%= message.added %></p>
+                <button>Show in an external page</button>
+            </div>
+        <% }) %>
+
+        <script>
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach((button) => {
+                button.addEventListener('click', (event) => {
+                    const messageDiv = event.target.parentElement;
+                    const user = messageDiv.querySelector('p:nth-child(1)').textContent;
+                    const text = messageDiv.querySelector('p:nth-child(2)').textContent;
+                    const added = messageDiv.querySelector('p:nth-child(3)').textContent;
+                    const newWindow = window.open('', '_blank');
+                    newWindow.document.write(`<h1>${user}</h1><p>${text}</p><p>${added}</p>`);
+                });
+            });
+        </script>
+    
 </body>
 </html>
