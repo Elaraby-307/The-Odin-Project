@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <style>
+        #search {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        center {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+    <center>
+        <form action="/new" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <button type="submit">Submit</button>
+        </form>   
+    </center> 
+</body>
+</html>
