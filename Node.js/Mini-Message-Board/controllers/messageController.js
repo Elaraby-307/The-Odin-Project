@@ -7,8 +7,8 @@ function getMessage (req, res) {
 
 
 
-function postMessage (req, res)  {
-    insertNewMessage(req.body.sender, req.body.content);
+async function postMessage (req, res)  {
+    await insertNewMessage(req.body.sender, req.body.content);
     res.redirect('/');
 }
 
