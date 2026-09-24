@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +8,12 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    
+        
         <% messages.forEach((message) => {%>
             <div>
-                <p><%= message.user %></p>
-                <p><%= message.text %></p>
-                <p><%= message.added %></p>
+                <p><%= message.sender %></p>
+                <p><%= message.content %></p>
+                <p><%= message.created_at %></p>
                 <button>Show in an external page</button>
             </div>
         <% }) %>

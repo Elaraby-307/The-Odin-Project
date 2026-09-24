@@ -8,11 +8,12 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
 
-
-
-
-const {router:indexRouter} = require('./routes/index');
+//routes
+const indexRouter = require('./routes/index');
 const messageRouter = require('./routes/message');
+
+
+
 
 
 
