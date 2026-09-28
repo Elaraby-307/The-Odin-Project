@@ -1,0 +1,22 @@
+<%- include('./constants/header')%>
+
+<section class="form-intro">
+	<p class="eyebrow">New product</p>
+	<h1>Choose a category</h1>
+	<p class="page-description">Start with an existing category or create one as you add this product.</p>
+</section>
+
+<div class="choice-list">
+	<a class="choice-option" href="/create?choice=existing">
+		<span class="choice-number">01</span>
+		<span><strong>Use an existing category</strong><small>Place this product in your current catalog.</small></span>
+		<span class="choice-arrow" aria-hidden="true">↗</span>
+	</a>
+	<a class="choice-option" href="/create?choice=new">
+		<span class="choice-number">02</span>
+		<span><strong>Create a new category</strong><small>Add a category while creating your product.</small></span>
+		<span class="choice-arrow" aria-hidden="true">↗</span>
+	</a>
+</div>
+
+<%- include('./constants/footer')%>

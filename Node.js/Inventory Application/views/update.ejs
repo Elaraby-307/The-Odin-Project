@@ -1,0 +1,29 @@
+<%- include('./constants/header')%>
+
+    <section class="form-intro">
+        <p class="eyebrow">Product details</p>
+        <h1>Update product</h1>
+        <p class="page-description">Edit the information shown in your inventory.</p>
+    </section>
+
+    <form action="/update/<%= id %>" method="post">
+        <label for="name">Enter Product Name: </label>
+        <input id="name" type="text" name="name">
+        <label for="price">Enter Product Price: </label>
+        <input id="price" type="number" name="price">
+        <select name="category">
+            <option value="" disabled selected hidden>Choose a category</option>
+            <% if (locals.categories) {%>
+                <% categories.forEach((cat)=> { %>
+                    <option value="<%= cat.name %>" category==='<%= cat.name %>' ? 'selected' : ''>
+                        <%= cat.name %>
+                    </option>
+                    <%})}%>
+        </select>
+        <input type="hidden" name="id" value="<%= id %>">
+
+        <input type="submit" value="Update">
+    </form>
+
+
+    <%- include('./constants/footer')%>

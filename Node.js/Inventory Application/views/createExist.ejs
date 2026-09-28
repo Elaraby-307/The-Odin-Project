@@ -1,0 +1,30 @@
+<%- include('./constants/header')%>
+
+    <section class="form-intro">
+        <p class="eyebrow">New product</p>
+        <h1>Add to your inventory</h1>
+        <p class="page-description">Choose an existing category for this product.</p>
+    </section>
+
+    <form action="/" method="post">
+        <label for="name">Enter Product Name: </label>
+        <input id="name" type="text" name="name">
+        <label for="price">Enter Product Price: </label>
+        <input id="price" type="number" name="price">
+        <select name="category">
+            <option value="" disabled selected hidden>Choose a category</option>
+            <% if (locals.categories) {%>
+                <% categories.forEach((cat)=> { %>
+                    <option value="<%= cat.name %>" category==='<%= cat.name %>' ? 'selected' : ''>
+                        <%= cat.name %>
+                    </option>
+                    <%})}%>
+        </select>
+
+        <input type="submit" value="Create">
+    </form>
+
+
+
+
+    <%- include('./constants/footer')%>

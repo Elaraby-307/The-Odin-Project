@@ -1,0 +1,23 @@
+<%- include('./constants/header')%>
+
+    <section class="form-intro">
+        <p class="eyebrow">New product</p>
+        <h1>Add a product and category</h1>
+        <p class="page-description">Create a category and add its first product.</p>
+    </section>
+
+    <form action="/" method="post">
+        <label for="name">Enter Product Name: </label>
+        <input id="name" type="text" name="name">
+        <label for="price">Enter Product Price: </label>
+        <input id="price" type="number" name="price">
+        <label for="category">Enter Category Name: </label>
+        <input id="category" type="text" name="newCategory">
+
+        <input type="submit" value="Create">
+    </form>
+
+
+
+
+    <%- include('./constants/footer')%>

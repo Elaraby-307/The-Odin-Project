@@ -1,0 +1,11 @@
+<form class="category-filter" method="GET" action="/">
+    <select name="category" onchange="this.form.submit()">
+        <option value="" disabled selected hidden>Choose a category</option>
+        <% if (locals.categories) {%>
+            <% categories.forEach((cat)=> { %>
+                <option value="<%= cat.name %>" category==='<%= cat.name %>' ? 'selected' : ''>
+                    <%= cat.name %>
+                </option>
+                <%})}%>
+    </select>
+</form>

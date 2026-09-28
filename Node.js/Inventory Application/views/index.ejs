@@ -1,0 +1,55 @@
+<%- include('./constants/header', { title: 'Inventory' }) %>
+
+    <section class="page-heading">
+        <div>
+            <p class="eyebrow">Your workspace</p>
+            <h1>Inventory</h1>
+            <p class="page-description">A clear view of the products you have on hand.</p>
+        </div>
+        <a class="button button-primary" href="/create">Add a product <span aria-hidden="true">+</span></a>
+    </section>
+
+    <section class="inventory-section">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">Catalog</p>
+                <h2>Products</h2>
+            </div>
+            <%- include('./constants/select', { category: locals.category }) %>
+        </div>
+
+        <% if (locals.rows && rows.length) { %>
+            <div class="product-list">
+                <% rows.forEach((row)=> { %>
+                    <article class="product-row">
+                        <div class="product-mark" aria-hidden="true">
+                            <%= row.name.charAt(0).toUpperCase() %>
+                        </div>
+                        <div class="product-details">
+                            <h3>
+                                <%= row.name %>
+                            </h3>
+                            <p>Product #<%= row.id %>
+                            </p>
+                        </div>
+                        <p class="product-price"><span>Price</span>
+                            <%= row.price %>
+                        </p>
+                        <div class="product-actions">
+                            <a class="button button-secondary" href="/update/<%= row.id %>">Edit</a>
+                            <a class="button button-danger" href="/delete/<%= row.id %>">Delete</a>
+                        </div>
+                    </article>
+                    <% }) %>
+            </div>
+            <% } else { %>
+                <div class="empty-state">
+                    <span class="empty-mark" aria-hidden="true">＋</span>
+                    <h3>No products yet</h3>
+                    <p>Add your first product to start building your inventory.</p>
+                    <a class="button button-primary" href="/create">Add a product</a>
+                </div>
+                <% } %>
+    </section>
+
+    <%- include('./constants/footer') %>
