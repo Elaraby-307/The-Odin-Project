@@ -1,0 +1,11 @@
+<%- include('./constants/header') %>
+<%- include('./constants/errors') %>
+<form action="/log-in" method="post">
+    <label for="email">Email</label>
+    <input id="email" type="email" name="email" autocomplete="email" required>
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password" autocomplete="current-password" required>
+    <input type="submit" value="Log In">
+    <p>Don't have account! go <a href="/sign-up">Sign Up</a></p>
+</form>
+<%- include('./constants/footer') %>

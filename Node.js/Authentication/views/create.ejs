@@ -1,0 +1,11 @@
+<%- include('./constants/header')%>
+<%- include('./constants/errors')%>
+
+<form action="/create" method="post">
+    <label for="title">Title of message</label>
+    <input id="title" type="text" name="title" required>
+    <label for="body">Body of message</label>
+    <textarea name="body" id="body" required></textarea>
+    <input type="submit">
+</form>
+<%- include('./constants/footer')%>

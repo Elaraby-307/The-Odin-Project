@@ -1,0 +1,48 @@
+<%- include('./constants/header') %>
+<%- include('./constants/errors') %>
+
+<section class="page-intro">
+    <p class="eyebrow">THE COMMUNITY FORUM</p>
+    <h1>Ideas are better <span>shared.</span></h1>
+    <p class="intro-copy">A thoughtful place to trade ideas, ask questions, and join the conversation.</p>
+</section>
+
+<% if (locals.user && user.membership === 'Not Member') { %>
+    <aside class="notice">Have a membership code? <a href="/membership">Unlock the members area</a>.</aside>
+<% } %>
+
+<section class="feed" aria-label="Forum messages">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">LATEST DISCUSSIONS</p>
+            <h2>From the community</h2>
+        </div>
+        <% if (locals.user) { %><a class="button button-small" href="/create">Write a post</a><% } %>
+    </div>
+
+    <% if (!messages || messages.length === 0) { %>
+        <div class="empty-state"><h3>No posts yet.</h3><p>Be the first to start a conversation.</p></div>
+    <% } else { %>
+        <% messages.forEach((message) => { %>
+            <article class="message-card">
+                <% if (locals.user) { %>
+                    <div class="message-meta">
+                        <% if (String(user.is_admin).toLowerCase() === 'true' || user.membership === 'Member') { %>
+                            <span class="author"><%= message.username %></span>
+                        <% } else { %>
+                            <span class="author">Community member</span>
+                        <% } %>
+                        <% if (message.timestam) { %><time><%= message.timestam %></time><% } %>
+                    </div>
+                <% } %>
+                <h3><%= message.title %></h3>
+                <p class="message-body"><%= message.body %></p>
+                <% if (locals.user && String(user.is_admin).toLowerCase() === 'true') { %>
+                    <a class="delete-link" href="/delete/<%= message.id %>">Delete post</a>
+                <% } %>
+            </article>
+        <% }) %>
+    <% } %>
+</section>
+
+<%- include('./constants/footer') %>

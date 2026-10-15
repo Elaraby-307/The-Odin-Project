@@ -1,0 +1,13 @@
+<%- include('./constants/header.ejs') %>
+<h1><%= memberView ? 'Members forum' : 'Forum' %></h1>
+<% if (!currentUser) { %><p><a href="/login">Log in</a> to join the conversation.</p><% } %>
+<% if (currentUser && String(currentUser.membership).toLowerCase() !== 'member') { %><p><a href="/join-membership">Enter a membership secret</a> to unlock member names and the members forum.</p><% } %>
+<% if (messages.length === 0) { %><p>No messages yet.</p><% } %>
+<% messages.forEach((message) => { %>
+    <article>
+        <h2><%= message.title %></h2>
+        <p><%= message.body %></p>
+        <small>By <%= memberView && String(message.membership || '').toLowerCase() === 'member' ? `${message.fname} ${message.lname}` : 'Unknown' %> · <%= new Date(message.created_at).toLocaleString() %></small>
+    </article>
+<% }); %>
+<%- include('./constants/footer.ejs') %>

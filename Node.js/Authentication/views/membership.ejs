@@ -1,0 +1,18 @@
+<%- include('./constants/header.ejs') %>
+<%- include('./constants/errors.ejs') %>
+
+
+
+<form action="/membership" method="post">
+    <label for="secret">Membership secret</label>
+    <input id="secret" type="password" name="secret" required>
+    <button type="submit">Check</button>
+</form>
+
+
+
+
+
+
+
+<%- include('./constants/footer.ejs') %>
